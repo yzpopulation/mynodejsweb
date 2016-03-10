@@ -29,9 +29,12 @@ gulp.task('connect', function () {
         root: 'www/index.html',
         port: 80,
         livereload:true,
+
         //fallback:"www/index.html",
         middleware: function (connect, opt) {
             //console.log(opt);
+            console.log(connect);
+            console.log(opt);
             return [
                 function (req, res, next) {
                     var url = require('url').parse(req.url);
@@ -48,6 +51,21 @@ gulp.task('connect', function () {
                                     res.end();
                                 }
                             });
+                            break;
+                        case '/aa':
+                            console.log(req.method);
+                            if (req.method==="GET"){
+                                res.writeHead(200, {'Content-Type': 'text/plain; charset="UTF-8"'});
+                                res.write("get");
+                                res.end();
+                            }else {
+                                   if (req.method==="POST"){
+                                    res.writeHead(200, {'Content-Type': 'text/plain; charset="UTF-8"'});
+                                    res.write("post");
+                                    res.end();
+                                }
+                            }
+
                             break;
                         //case '/test/delay':// 此处用于模拟缓慢的网络连接
                         //    // 使用查询字符串来获取延迟时长,或者2000毫秒
