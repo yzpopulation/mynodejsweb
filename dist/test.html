@@ -39,6 +39,9 @@
             data: JSON.stringify(j),
             dataType:"JSON",
             contentType:"application/Json",
+            statusCode: {404: function() {
+                alert('page not found');
+            },
             success: function(msg){
                 alert( "Data Saved: " + msg );
                 alert("string:"+JSON.stringify(msg));
