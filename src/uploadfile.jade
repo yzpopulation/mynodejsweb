@@ -1,0 +1,26 @@
+//
+   Created by Administrator on 2016/3/11.
+
+doctype html
+html
+    head(lang="en")
+        meta(charset="utf-8")
+        title upload
+        script.
+            function uploadFile() {
+                var formData = new FormData();
+                var files = document.getElementById("files").files;
+                var file = files[0];
+                formData.append("myfile", file);
+                var xhr = new XMLHttpRequest();
+                xhr.open("post", "post.html", true);
+                xhr.onload = function (e) {
+                    if (this.status == 200)
+                        document.getElementById("result").innerHTML = this.response;
+                };
+                xhr.send(formData);
+            }
+    body
+        input#files(type="file",name="file")
+        input(type="button",value="上传文件",onclick="uploadFile();")
+        div#result

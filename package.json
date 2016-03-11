@@ -1,17 +1,22 @@
 {
-    "name": "untitled1",
-    "version": "1.0.0",
-    "description": "",
-    "main": "gulpfile.js",
-    "scripts": {
-        "start": "node node_modules/gulp/bin/gulp.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "gulp": "~3.9.0",
-        "gulp-connect": "~3.1.0",
-        "gulp-jade": "~1.1.0"
-    }
+  "name": "untitled1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "node node_modules/gulp/bin/gulp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "gulp": "~3.9.0",
+    "gulp-connect": "~3.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-util": "^3.0.7",
+    "path": "^0.12.7"
+  }
 }
