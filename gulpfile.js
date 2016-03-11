@@ -169,6 +169,13 @@ gulp.task('expressServer',function(){
         res.writeHead(200, {'Content-Type': 'application/json'});
         res.end(JSON.stringify(req.body));
     });
+    server.get('*',function(req,res,next){
+        fs.readFile('dist/404.html',function(err,content){
+            console.log(content);
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.end(content);
+        });
+    });
     server.listen(80);
 });
 
