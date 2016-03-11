@@ -171,7 +171,6 @@ gulp.task('expressServer',function(){
     });
     server.get('*',function(req,res,next){
         fs.readFile('dist/404.html',function(err,content){
-            console.log(content);
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.end(content);
         });
